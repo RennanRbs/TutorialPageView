@@ -25,8 +25,9 @@ class ViewController: UIViewController {
     self.pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     self.pageController?.dataSource = self
     self.pageController?.delegate = self
-    self.pageController?.view.backgroundColor = .blue
+    self.pageController?.view.backgroundColor = .cyan
     self.pageController?.view.frame = CGRect(x: 0,y: 0,width: self.view.frame.width,height: self.view.frame.height)
+    
 
     self.addChild(self.pageController!)
     self.view.addSubview(self.pageController!.view)
@@ -51,10 +52,11 @@ extension ViewController: UIPageViewControllerDelegate, UIPageViewControllerData
         var index = currentVC.page.index
         
         if index == 0 {
-            return nil
+            index = self.pages.count - 1
+//            return nil
+        } else {
+            index -= 1
         }
-        
-        index -= 1
         
         let vc: PageVC = PageVC(with: pages[index])
         
@@ -70,10 +72,12 @@ extension ViewController: UIPageViewControllerDelegate, UIPageViewControllerData
                var index = currentVC.page.index
                
                if index >= self.pages.count - 1 {
-                   return nil
+//                   return nil
+                    index = 0
+               } else {
+                    index += 1
                }
                
-               index += 1
                
                let vc: PageVC = PageVC(with: pages[index])
                
@@ -85,7 +89,7 @@ extension ViewController: UIPageViewControllerDelegate, UIPageViewControllerData
     }
     
     func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return self.pages.count
+        return 0
     }
     
     
