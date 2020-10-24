@@ -28,7 +28,7 @@ class PageVC: UIViewController {
         super.viewDidLoad()
 
         titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
-        titleLabel?.center = CGPoint(x: 160, y: 250)
+        titleLabel?.center = CGPoint(x: view.center.x, y: view.center.y)
         titleLabel?.textAlignment = NSTextAlignment.center
         titleLabel?.text = page.name
         self.view.addSubview(titleLabel!)

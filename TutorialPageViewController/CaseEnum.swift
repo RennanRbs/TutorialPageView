@@ -13,6 +13,8 @@ enum Pages: CaseIterable {
     case pageOne
     case pageTwo
     case pageThree
+    case pageFour
+    case pageFive
     
     var name: String {
         switch self {
@@ -24,6 +26,10 @@ enum Pages: CaseIterable {
             return "This is page two"
         case .pageThree:
             return "This is page three"
+        case .pageFour:
+            return "This is page Four"
+        case .pageFive:
+            return "This is page Five"
         }
     }
     
@@ -37,6 +43,10 @@ enum Pages: CaseIterable {
             return 2
         case .pageThree:
             return 3
+        case .pageFour:
+            return 4
+        case .pageFive:
+            return 5
         }
     }
 }
