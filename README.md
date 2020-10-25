@@ -1,5 +1,1 @@
 # TutorialPageView
-
-
-
-XD
